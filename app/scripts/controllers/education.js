@@ -8,10 +8,9 @@
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('EducationCtrl', function ($scope) {
-            $scope.awesomeThings = [
-                'HTML5 Boilerplate',
-                'AngularJS',
-                'Karma'
-            ];
+        .controller('EducationCtrl', function ($scope, courses) {
+            $scope.vo = {};
+            courses.getCourses().then(function (data) {
+                $scope.vo.courses = data;
+            });
         });
