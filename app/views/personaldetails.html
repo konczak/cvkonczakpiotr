@@ -10,7 +10,7 @@
                     <div class="col-xs-12 social-btns">
 
                         <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                            <a href="#" class="btn btn-social btn-block btn-google">
+                            <a href="{{vo.socialLinks.googleplus}}" class="btn btn-social btn-block btn-google">
                                 <i class="fa fa-google"></i> </a>
                         </div>
 
@@ -30,12 +30,12 @@
                         </div>
 
                         <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                            <a href="#" class="btn btn-social btn-block btn-github">
+                            <a href="{{vo.socialLinks.github}}" class="btn btn-social btn-block btn-github">
                                 <i class="fa fa-github"></i> </a>
                         </div>
 
                         <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                            <a href="#" class="btn btn-social btn-block btn-stackoverflow">
+                            <a href="{{vo.socialLinks.stackoverflow}}" class="btn btn-social btn-block btn-stackoverflow">
                                 <i class="fa fa-stack-overflow"></i> </a>
                         </div>
 
@@ -46,11 +46,10 @@
 
             <div class="col-xs-12 col-sm-8">
                 <ul class="list-group">
-                    <li class="list-group-item">John Doe</li>
-                    <li class="list-group-item">Senior Software Engineer</li>
-                    <li class="list-group-item">google inc.</li>
-                    <li class="list-group-item"><i class="fa fa-phone"></i> 000-000-0000 </li>
-                    <li class="list-group-item"><i class="fa fa-envelope"></i> john@example.com</li>
+                    <li class="list-group-item">{{vo.personalData.firstname}} {{vo.personalData.lastname}}</li>
+                    <li class="list-group-item">{{vo.personalData.jobTitle}}</li>
+                    <li class="list-group-item">{{vo.personalData.jobCompany}}</li>
+                    <li class="list-group-item"><i class="fa fa-envelope"></i> {{vo.personalData.email}}</li>
                 </ul>
             </div>
         </div>
