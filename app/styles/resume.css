@@ -151,3 +151,12 @@
     text-align: right;
 }
 
+h5.skills-category {
+    color: #d9534f;
+    text-align: center;
+}
+
+.progress-bar-warning .progress-type, 
+.progress-bar-danger .progress-type {
+    color: black;
+}

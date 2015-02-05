@@ -15,7 +15,9 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap',
+    'ngAnimate-animate.css'
   ])
   .config(function ($routeProvider) {
     $routeProvider
