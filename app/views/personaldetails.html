@@ -15,16 +15,6 @@
                         </div>
 
                         <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                            <a href="#" class="btn btn-social btn-block btn-facebook">
-                                <i class="fa fa-facebook"></i> </a>
-                        </div>
-
-                        <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
-                            <a href="#" class="btn btn-social btn-block btn-twitter">
-                                <i class="fa fa-twitter"></i> </a>
-                        </div>
-
-                        <div class="col-xs-3 col-md-1 col-lg-1 social-btn-holder">
                             <a href="#" class="btn btn-social btn-block btn-linkedin">
                                 <i class="fa fa-linkedin"></i> </a>
                         </div>
@@ -49,7 +39,10 @@
                     <li class="list-group-item">{{vo.personalData.firstname}} {{vo.personalData.lastname}}</li>
                     <li class="list-group-item">{{vo.personalData.jobTitle}}</li>
                     <li class="list-group-item">{{vo.personalData.jobCompany}}</li>
-                    <li class="list-group-item"><i class="fa fa-envelope"></i> {{vo.personalData.email}}</li>
+                    <li class="list-group-item">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:{{vo.personalData.email}}">{{vo.personalData.email}}</a>
+                    </li>
                 </ul>
             </div>
         </div>
