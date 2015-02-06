@@ -66,12 +66,15 @@
                     <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
                         <div class="panel panel-default">
                             <div class="view-container">
+                                <h3 class="loadingBar text-center" ng-show="loadingView">
+                                    <i class="fa fa-spinner fa-spin"></i>
+                                    <span class="text-lowercase">loading...</span>
+                                </h3>
                                 <div ng-view="" class="view-frame"></div>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                </div>                
             </div>
         </div>
 
