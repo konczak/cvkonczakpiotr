@@ -1,0 +1,27 @@
+<div class="bs-callout bs-callout-danger">
+    <h4>Projects</h4>
+    <ul class="list-group">
+        <a class="list-group-item inactive-link" href="#" ng-repeat="project in vo.projects">
+            <h4 class="list-group-item-heading">
+                {{project.name}}
+                <span class="label pull-right" 
+                      ng-class="{'label-info' : (project.endAt === 'actual'), 'label-success' : (project.endAt !== 'actual')}">
+                    {{project.startAt}} - {{project.endAt}}
+                </span>
+            </h4>
+            <p class="list-group-item-text">
+                {{project.description}}
+            </p>
+            <ul>
+                <li ng-repeat="role in project.roles">
+                    {{role}}
+                </li>
+            </ul>
+            <p>
+                <span ng-repeat="technology in project.technologies">
+                    <span class="label label-danger">{{technology}}</span>
+                </span>
+            </p>
+        </a>
+    </ul>
+</div>

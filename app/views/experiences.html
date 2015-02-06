@@ -1,48 +1,17 @@
 <div class="bs-callout bs-callout-danger">
     <h4>Prior Experiences</h4>
     <ul class="list-group">
-        <a class="list-group-item inactive-link" href="#">
-            <h4 class="list-group-item-heading">
-                Software Engineer at Twitter
-            </h4>
+        <a class="list-group-item inactive-link" href="#" ng-repeat="job in vo.jobs">
+            <h4 class="list-group-item-heading">{{job.title}} in {{job.company}}</h4>
             <p class="list-group-item-text">
-                Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. Quis verear mel ne. Munere vituperata vis cu, 
-                te pri duis timeam scaevola, nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
+                {{job.description}}
             </p>
-        </a>
-        <a class="list-group-item inactive-link" href="#">
-            <h4 class="list-group-item-heading">Software Engineer at LinkedIn</h4>
-            <p class="list-group-item-text">
-                Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. 
-                Quis verear mel ne. Munere vituperata vis cu, te pri duis timeam scaevola, 
-                nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-            </p><ul>
-                <li>
-                    Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. 
-                    Quis verear mel ne. Munere vituperata vis cu, te pri duis timeam scaevola, 
-                    nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
-                </li>
-                <li>
-                    Lorem ipsum dolor sit amet, ea vel prima adhuc, scripta liberavisse ea quo, te vel vidit mollis complectitur. 
-                    Quis verear mel ne. Munere vituperata vis cu, te pri duis timeam scaevola, 
-                    nam postea diceret ne. Cum ex quod aliquip mediocritatem, mei habemus persecuti mediocritatem ei.
+            <ul>
+                <li ng-repeat="responsibility in job.responsibilities">
+                    {{responsibility}}
                 </li>
             </ul>
             <p></p>
         </a>
-    </ul>
-</div>
-<div class="bs-callout bs-callout-danger">
-    <h4>Key Expertise</h4>
-    <ul class="list-group">
-        <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc </li>
-        <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-        <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-        <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-        <li class="list-group-item">Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-        <li class="list-group-item"> Lorem ipsum dolor sit amet, ea vel prima adhuc</li>
-
-
-
     </ul>
 </div>

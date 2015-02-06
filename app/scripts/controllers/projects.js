@@ -2,17 +2,14 @@
 
 /**
  * @ngdoc function
- * @name konczakpiotrcvApp.controller:ExperiencesCtrl
+ * @name konczakpiotrcvApp.controller:ProjectsCtrl
  * @description
- * # ExperiencesCtrl
+ * # ProjectsCtrl
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('ExperiencesCtrl', function ($scope, jobs, projects) {
+        .controller('ProjectsCtrl', function ($scope, projects) {
             $scope.vo = {};
-            jobs.getJobs().then(function (data) {
-                $scope.vo.jobs = data;
-            });
 
             projects.getProjects().then(function (data) {
                 $scope.vo.projects = data;
