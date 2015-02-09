@@ -9,13 +9,9 @@
  */
 angular.module('konczakpiotrcvApp')
         .controller('PersonaldetailsCtrl', function ($scope, personalData, socialLinks) {
-            $scope.vo = {};
-            personalData.getPersonalData().then(function (data) {
-                $scope.vo.personalData = data;
-            });
-
-            socialLinks.getSocialLinks().then(function (data) {
-                $scope.vo.socialLinks = data;
-            });
+            $scope.vo = {
+                personalData: personalData,
+                socialLinks: socialLinks
+            };
 
         });

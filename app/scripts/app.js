@@ -31,23 +31,54 @@ angular
                     })
                     .when('/personalDetails', {
                         templateUrl: 'views/personaldetails.html',
-                        controller: 'PersonaldetailsCtrl'
+                        controller: 'PersonaldetailsCtrl',
+                        resolve: {
+                            personalData: function (personalData) {
+                                return personalData.getPersonalData();
+                            },
+                            socialLinks: function (socialLinks) {
+                                return socialLinks.getSocialLinks();
+                            }
+                        }
                     })
                     .when('/experiences', {
                         templateUrl: 'views/experiences.html',
-                        controller: 'ExperiencesCtrl'
+                        controller: 'ExperiencesCtrl',
+                        resolve: {
+                            jobs: function (jobs) {
+                                return jobs.getJobs();
+                            }
+                        }
                     })
                     .when('/skills', {
                         templateUrl: 'views/skills.html',
-                        controller: 'SkillsCtrl'
+                        controller: 'SkillsCtrl',
+                        resolve: {
+                            mainSkills: function (skills) {
+                                return skills.getMainSkills();
+                            },
+                            categories: function (skills) {
+                                return skills.getOtherSkills();
+                            }
+                        }
                     })
                     .when('/education', {
                         templateUrl: 'views/education.html',
-                        controller: 'EducationCtrl'
+                        controller: 'EducationCtrl',
+                        resolve: {
+                            courses: function (courses) {
+                                return courses.getCourses();
+                            }
+                        }
                     })
                     .when('/projects', {
                         templateUrl: 'views/projects.html',
-                        controller: 'ProjectsCtrl'
+                        controller: 'ProjectsCtrl',
+                        resolve: {
+                            projects: function (projects) {
+                                return projects.getProjects();
+                            }
+                        }
                     })
                     .otherwise({
                         redirectTo: '/'

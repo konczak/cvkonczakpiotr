@@ -9,8 +9,8 @@
  */
 angular.module('konczakpiotrcvApp')
         .controller('EducationCtrl', function ($scope, courses) {
-            $scope.vo = {};
-            courses.getCourses().then(function (data) {
-                $scope.vo.courses = data;
-            });
+            $scope.vo = {
+                courses: courses
+            };
+
         });

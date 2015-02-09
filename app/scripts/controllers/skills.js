@@ -8,8 +8,11 @@
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('SkillsCtrl', function ($scope, skills) {
-            $scope.vo = {};
+        .controller('SkillsCtrl', function ($scope, mainSkills, categories) {
+            $scope.vo = {
+                mainSkills: mainSkills,
+                categories: categories
+            };
 
             function findProperType(percent) {
                 if (percent >= 75) {
@@ -22,21 +25,13 @@ angular.module('konczakpiotrcvApp')
                 return 'danger';
             }
 
-
-            skills.getMainSkills().then(function (data) {
-                $scope.vo.mainSkills = data;
-                angular.forEach($scope.vo.mainSkills, function (value, key) {
-                    value.type = findProperType(value.percent);
-                });
+            angular.forEach($scope.vo.mainSkills, function (value, key) {
+                value.type = findProperType(value.percent);
             });
 
-            skills.getOtherSkills().then(function (data) {
-                $scope.vo.categories = data;
-                angular.forEach($scope.vo.categories, function (value, key) {
-
-                    angular.forEach(value.skills, function (value, key) {
-                        value.type = findProperType(value.percent);
-                    });
+            angular.forEach($scope.vo.categories, function (value, key) {
+                angular.forEach(value.skills, function (value, key) {
+                    value.type = findProperType(value.percent);
                 });
             });
 
