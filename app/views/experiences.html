@@ -4,9 +4,6 @@
         <a class="list-group-item inactive-link" href="#" ng-repeat="job in vo.jobs">
             <h4 class="list-group-item-heading">{{job.title}} in {{job.company}}</h4>
             <h4><span class="label label-primary">{{job.startAt}}</span> - <span class="label label-primary">{{job.endAt}}</span></h4>
-            <p class="list-group-item-text">
-                {{job.description}}
-            </p>
             <ul>
                 <li ng-repeat="responsibility in job.responsibilities">
                     {{responsibility}}
