@@ -1,9 +1,11 @@
 <div class="bs-callout bs-callout-danger" ng-hide="vo.showOthers">
-    <a class="pull-right clickable" 
+    <a class="btn btn-primary btn-sm pull-right"
        ng-click="vo.showOthers = true">
         Show all
     </a>
     <h4>Main Language and Platform Skills</h4>
+
+    <br/>
     <ul class="list-group">
         <a class="list-group-item inactive-link" href="#">
             <progressbar value="skill.percent" type="{{skill.type}}" ng-repeat="skill in vo.mainSkills">
@@ -22,7 +24,7 @@
 </div>
 
 <div class="bs-callout bs-callout-danger dn-fade-up" ng-show="vo.showOthers">
-    <a class="pull-right clickable" 
+    <a class="btn btn-primary btn-sm pull-right"
        ng-click="vo.showOthers = false">
         Show only main
     </a>
@@ -34,7 +36,7 @@
             <a class="list-group-item inactive-link" href="#">
                 <progressbar value="skill.percent" 
                              type="{{skill.type}}" 
-                             ng-repeat="skill in category.skills | orderBy: 'percent' : true">
+                             ng-repeat="skill in category.skills| orderBy: 'percent' : true">
                     <span class="sr-only">{{skill.percent}}%</span>
                     <span class="progress-type"><b>{{skill.name}}</b></span>
                 </progressbar>
