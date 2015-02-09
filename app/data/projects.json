@@ -4,7 +4,7 @@
             "name": "NZOZ system",
             "startAt": "02/08/2005",
             "endAt": "30/06/2011",
-            "description": "Complex system supporting work of health center",
+            "description": "System supporting work of health center, based on business roles UIs",
             "roles": [
                 "Software Engineer"
             ],
@@ -31,7 +31,7 @@
             "name": "e-exam",
             "startAt": "01/10/2013",
             "endAt": "actual",
-            "description": "Complex system handling organisation of online exams",
+            "description": "System handling organisation of online exams",
             "roles": [
                 "Software Engineer",
                 "Software Architect",
@@ -46,7 +46,7 @@
             "name": "TeleP Parkering",
             "startAt": "28/07/2011",
             "endAt": "actual",
-            "description": "Complex system of car parks allowing start, stop, buy and administrate car parks",
+            "description": "Complex system of car parks allowing start, stop, buy and administrate car parks via different entry points (Web/mobile/IVR/SMS)",
             "roles": [
                 "Software Engineer",
                 "Software Architect",
@@ -72,7 +72,7 @@
             "name": "Planer szkoleń",
             "startAt": "01/07/2014",
             "endAt": "actual",
-            "description": "",
+            "description": "Web app for HR to manage trainings and courses",
             "roles": [
                 "Team Leader",
                 "Scrum Master",
@@ -86,7 +86,7 @@
             "name": "Compliance Portal",
             "startAt": "01/01/2015",
             "endAt": "10/02/2015",
-            "description": "",
+            "description": "Web app for fill dynamic surveys",
             "roles": [
                 "Technical Support Engineer"
             ],
