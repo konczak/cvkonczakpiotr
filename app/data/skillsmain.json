@@ -7,10 +7,10 @@
             "name": "SQL",
             "percent": 80
         }, {
-            "name": "HTML / CSS",
+            "name": "HTML / CSS / Bootstrap",
             "percent": 75
         }, {
-            "name": "JavaScript / AngularJS / Bootstrap",
+            "name": "JavaScript / AngularJS",
             "percent": 70
         }, {
             "name": "Apache Web Server / Apache Tomcat",
