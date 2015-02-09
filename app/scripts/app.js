@@ -21,7 +21,7 @@ angular
         ])
         .config(function ($routeProvider) {
             $routeProvider
-                    .when('/', {
+                    .when('/allInOnePage', {
                         templateUrl: 'views/main.html',
                         controller: 'MainCtrl'
                     })
@@ -81,7 +81,7 @@ angular
                         }
                     })
                     .otherwise({
-                        redirectTo: '/'
+                        redirectTo: '/personalDetails'
                     });
         })
         .run(['$rootScope', function ($root) {
