@@ -4,7 +4,7 @@
         <a class="list-group-item inactive-link" href="#" ng-repeat="project in vo.projects">
             <h4 class="list-group-item-heading">
                 {{project.name}}
-                <span class="label label-info pull-right">
+                <span class="label label-primary pull-right">
                     {{project.startAt}} - {{project.endAt}}
                 </span>
             </h4>
@@ -18,7 +18,7 @@
             </ul>
             <p>
                 <span ng-repeat="technology in project.technologies">
-                    <span class="label label-success">{{technology}}</span>
+                    <span class="label label-info">{{technology}}</span>
                 </span>
             </p>
         </a>
