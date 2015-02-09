@@ -11,6 +11,16 @@ angular.module('konczakpiotrcvApp')
         .factory('skills', function ($q, $timeout, $http) {
             // Service logic
             // ...
+            function findProperType(percent) {
+                if (percent >= 75) {
+                    return 'success';
+                } else if (percent >= 50) {
+                    return 'info';
+                } else if (percent >= 25) {
+                    return 'warning';
+                }
+                return 'danger';
+            }
 
             // Public API here
             return {
@@ -20,7 +30,13 @@ angular.module('konczakpiotrcvApp')
 
                     $timeout(function () {
                         $http.get('data/skillsmain.json').success(function (data) {
-                            deferred.resolve(data.skills);
+                            var skills = data.skills;
+
+                            angular.forEach(skills, function (value, key) {
+                                value.type = findProperType(value.percent);
+                            });
+
+                            deferred.resolve(skills);
                         });
                     }, 30);
 
@@ -32,7 +48,14 @@ angular.module('konczakpiotrcvApp')
 
                     $timeout(function () {
                         $http.get('data/skillsother.json').success(function (data) {
-                            deferred.resolve(data.categories);
+                            var categories = data.categories;
+                            angular.forEach(categories, function (value, key) {
+                                angular.forEach(value.skills, function (value, key) {
+                                    value.type = findProperType(value.percent);
+                                });
+                            });
+
+                            deferred.resolve(categories);
                         });
                     }, 30);
 

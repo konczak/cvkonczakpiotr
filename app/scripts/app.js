@@ -23,7 +23,27 @@ angular
             $routeProvider
                     .when('/allInOnePage', {
                         templateUrl: 'views/main.html',
-                        controller: 'MainCtrl'
+                        controller: 'MainCtrl',
+                        resolve: {
+                            personalData: function (personalData) {
+                                return personalData.getPersonalData();
+                            },
+                            socialLinks: function (socialLinks) {
+                                return socialLinks.getSocialLinks();
+                            },
+                            courses: function (courses) {
+                                return courses.getCourses();
+                            },
+                            jobs: function (jobs) {
+                                return jobs.getJobs();
+                            },
+                            mainSkills: function (skills) {
+                                return skills.getMainSkills();
+                            },
+                            categories: function (skills) {
+                                return skills.getOtherSkills();
+                            }
+                        }
                     })
                     .when('/about', {
                         templateUrl: 'views/about.html',
