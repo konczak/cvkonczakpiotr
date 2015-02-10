@@ -73,6 +73,14 @@
                                 <div ng-view="" class="view-frame"></div>
                             </div>
                         </div>
+                        <ul class="pager" ng-controller="NavigationCtrl">
+                            <li class="previous" ng-class="{'disabled' : !vo.hasPrevious()}">
+                                <a ng-click="vo.openPrevious()">← Previous</a>
+                            </li>
+                            <li class="next" ng-class="{'disabled' : !vo.hasNext()}">
+                                <a ng-click="vo.openNext()">Next →</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>                
             </div>
@@ -132,6 +140,7 @@
         <script src="scripts/services/projects.js"></script>
         <script src="scripts/services/jobs.js"></script>
         <script src="scripts/controllers/projects.js"></script>
+        <script src="scripts/controllers/navigation.js"></script>
         <!-- endbuild -->
     </body>
 </html>
