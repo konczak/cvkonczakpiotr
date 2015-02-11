@@ -30,9 +30,17 @@
         <tbody>
             <tr ng-repeat="course in vo.courses">
                 <td>{{course.name}}</td>
-                <td ng-class="{'clickable' : course.description_en.length > 50}"
-                    ng-click="course.shortDescription = !course.shortDescription">
-                    {{course.description_en| showMoreWhenTooLong:!course.shortDescription:true:50}}
+                <td>
+                    <p class="clickable"
+                       ng-show="course.description_en.length > 50"
+                       ng-click="course.shortDescription = !course.shortDescription"
+                       tooltip="Press to expand or collapse"
+                       tooltip-popup-delay="200">
+                        {{course.description_en| showMoreWhenTooLong:!course.shortDescription:true:50}}
+                    </p>
+                    <p ng-show="course.description_en.length <= 50">
+                        {{course.description_en}}
+                    </p>
                 </td>
             </tr>
         </tbody>
