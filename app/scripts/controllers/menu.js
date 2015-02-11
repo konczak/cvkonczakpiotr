@@ -9,7 +9,7 @@
  */
 angular.module('konczakpiotrcvApp')
         .controller('MenuCtrl', function ($scope, $location) {
-            $scope.isActive = function (viewLocation) {
-                return viewLocation === $location.path();
+            $scope.isActive = function (route) {
+                return route === $location.path();
             };
         });

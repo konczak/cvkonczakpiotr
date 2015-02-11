@@ -42,6 +42,9 @@ angular
                             },
                             categories: function (skills) {
                                 return skills.getOtherSkills();
+                            },
+                            projects: function (projects) {
+                                return projects.getProjects();
                             }
                         }
                     })

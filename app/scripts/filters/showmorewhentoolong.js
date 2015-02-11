@@ -35,6 +35,6 @@ angular.module('konczakpiotrcvApp')
                     }
                 }
 
-                return value + (tail || ' …');
+                return value + (tail || '...');
             };
         });

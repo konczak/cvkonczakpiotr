@@ -43,7 +43,7 @@ angular.module('konczakpiotrcvApp')
                     return;
                 }
                 if (indexInList === 0) {
-                    indexInList = list.length - 1;
+                    return;
                 } else {
                     indexInList--;
                 }
@@ -58,7 +58,8 @@ angular.module('konczakpiotrcvApp')
                     return;
                 }
                 if (indexInList === (list.length - 1)) {
-                    indexInList = 0;
+                    //indexInList = 0;
+                    return;
                 } else {
                     indexInList++;
                 }
