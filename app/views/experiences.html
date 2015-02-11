@@ -2,8 +2,12 @@
     <h4>Prior Experiences</h4>
     <ul class="list-group">
         <a class="list-group-item inactive-link" href="#" ng-repeat="job in vo.jobs">
-            <h4 class="list-group-item-heading">{{job.title}} in {{job.company}}</h4>
-            <h4><span class="label label-primary">{{job.startAt}}</span> - <span class="label label-primary">{{job.endAt}}</span></h4>
+            <h4 class="list-group-item-heading">
+                {{job.title}} in {{job.company}}
+                <span class="label label-primary pull-right">
+                    {{job.startAt}} - {{job.endAt}}
+                </span>
+            </h4>
             <ul>
                 <li ng-repeat="responsibility in job.responsibilities">
                     {{responsibility}}
