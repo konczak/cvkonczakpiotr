@@ -3,7 +3,7 @@
         {
             "name": "Compliance Portal",
             "startAt": "01/01/2015",
-            "endAt": "11/02/2015",
+            "endAt": "23/02/2015",
             "description": "Web app for fill dynamic surveys",
             "roles": [
                 "Technical Support Engineer"
@@ -14,7 +14,7 @@
                 "AngularJS"
             ]
         }, {
-            "name": "Planer szkoleń",
+            "name": "Training planning",
             "startAt": "01/07/2014",
             "endAt": "actual",
             "description": "Web app for HR to manage trainings and courses",
