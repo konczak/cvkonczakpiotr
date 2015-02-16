@@ -85,3 +85,7 @@ body {
 .clickable {
     cursor: pointer;
 }
+
+.pager > li > a {
+    cursor: pointer;
+}
