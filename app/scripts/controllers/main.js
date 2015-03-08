@@ -9,7 +9,7 @@
  */
 angular.module('konczakpiotrcvApp')
         .controller('MainCtrl', function ($scope, personalData, socialLinks, courses,
-                jobs, mainSkills, categories, projects) {
+                jobs, mainSkills, categories, projects, todos) {
             $scope.vo = {
                 personalData: personalData,
                 socialLinks: socialLinks,
@@ -18,6 +18,7 @@ angular.module('konczakpiotrcvApp')
                 mainSkills: mainSkills,
                 categories: categories,
                 projects: projects,
-                showOthers: false
+                showOthers: false,
+                todos: todos
             };
         });

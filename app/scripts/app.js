@@ -45,6 +45,9 @@ angular
                             },
                             projects: function (projects) {
                                 return projects.getProjects();
+                            },
+                            todos: function (todo) {
+                                return todo.getTodos();
                             }
                         }
                     })
@@ -100,6 +103,15 @@ angular
                         resolve: {
                             projects: function (projects) {
                                 return projects.getProjects();
+                            }
+                        }
+                    })
+                    .when('/todo', {
+                        templateUrl: 'views/todo.html',
+                        controller: 'TodoCtrl',
+                        resolve: {
+                            todos: function (todo) {
+                                return todo.getTodos();
                             }
                         }
                     })

@@ -13,7 +13,8 @@ describe('Controller: MainCtrl', function () {
             jobs,
             projects,
             mainSkills,
-            categories;
+            categories,
+            todos;
 
     // Initialize the controller and a mock scope
     beforeEach(inject(function ($controller, $rootScope) {
@@ -25,6 +26,7 @@ describe('Controller: MainCtrl', function () {
         projects = [{name: 'name'}];
         mainSkills = [{name: 'skill'}];
         categories = [{name: 'category'}];
+        todos = [{title: 'todo'}];
         MainCtrl = $controller('MainCtrl', {
             $scope: scope,
             personalData: personalData,
@@ -33,7 +35,8 @@ describe('Controller: MainCtrl', function () {
             jobs: jobs,
             projects: projects,
             mainSkills: mainSkills,
-            categories: categories
+            categories: categories,
+            todos: todos
         });
     }));
 
@@ -73,4 +76,10 @@ describe('Controller: MainCtrl', function () {
         expect(scope.vo.categories).toBeDefined();
         expect(scope.vo.categories.length).toEqual(categories.length);
     });
+
+    it('should attach todos to vo', function () {
+        expect(scope.vo.todos).toBeDefined();
+        expect(scope.vo.todos.length).toEqual(todos.length);
+    });
+    
 });
