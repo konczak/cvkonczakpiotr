@@ -39,8 +39,33 @@ describe('Controller: NavigationCtrl', function () {
             expect(scope.vo.hasPrevious()).toBe(false);
         });
 
-        it('should return true in hasPrevious when location is different than /education', function () {
+        it('should return true in hasPrevious when location is /education', function () {
             location.path('/education');
+            expect(scope.vo.hasPrevious()).toBe(true);
+        });
+
+        it('should return true in hasPrevious when location is /experiences', function () {
+            location.path('/experiences');
+            expect(scope.vo.hasPrevious()).toBe(true);
+        });
+
+        it('should return true in hasPrevious when location is /projects', function () {
+            location.path('/projects');
+            expect(scope.vo.hasPrevious()).toBe(true);
+        });
+
+        it('should return true in hasPrevious when location is /skills', function () {
+            location.path('/skills');
+            expect(scope.vo.hasPrevious()).toBe(true);
+        });
+
+        it('should return true in hasPrevious when location is /todo', function () {
+            location.path('/todo');
+            expect(scope.vo.hasPrevious()).toBe(true);
+        });
+
+        it('should return true in hasPrevious when location is /allInOnePage', function () {
+            location.path('/allInOnePage');
             expect(scope.vo.hasPrevious()).toBe(true);
         });
     });
@@ -62,8 +87,33 @@ describe('Controller: NavigationCtrl', function () {
             expect(scope.vo.hasNext()).toBe(false);
         });
 
-        it('should return true in hasNext when location is different than /allInOnePage', function () {
+        it('should return true in hasNext when location is /personalDetails', function () {
+            location.path('/personalDetails');
+            expect(scope.vo.hasNext()).toBe(true);
+        });
+
+        it('should return true in hasNext when location is /education', function () {
             location.path('/education');
+            expect(scope.vo.hasNext()).toBe(true);
+        });
+
+        it('should return true in hasNext when location is /experiences', function () {
+            location.path('/experiences');
+            expect(scope.vo.hasNext()).toBe(true);
+        });
+
+        it('should return true in hasNext when location is /projects', function () {
+            location.path('/projects');
+            expect(scope.vo.hasNext()).toBe(true);
+        });
+
+        it('should return true in hasNext when location is /skills', function () {
+            location.path('/skills');
+            expect(scope.vo.hasNext()).toBe(true);
+        });
+
+        it('should return true in hasNext when location is /todo', function () {
+            location.path('/todo');
             expect(scope.vo.hasNext()).toBe(true);
         });
     });
@@ -75,10 +125,40 @@ describe('Controller: NavigationCtrl', function () {
             expect(typeof scope.vo.openPrevious).toBe('function');
         });
         
-        it('should change location path to /todos when location is /allInOnePage', function () {
+        it('should change location path to /todo when location is /allInOnePage', function () {
             location.path('/allInOnePage');
             scope.vo.openPrevious();
-            expect(location.path()).toBe('/todos');
+            expect(location.path()).toBe('/todo');
+        });
+        
+        it('should change location path to /skills when location is /todo', function () {
+            location.path('/todo');
+            scope.vo.openPrevious();
+            expect(location.path()).toBe('/skills');
+        });
+        
+        it('should change location path to /projects when location is /skills', function () {
+            location.path('/skills');
+            scope.vo.openPrevious();
+            expect(location.path()).toBe('/projects');
+        });
+        
+        it('should change location path to /experiences when location is /projects', function () {
+            location.path('/projects');
+            scope.vo.openPrevious();
+            expect(location.path()).toBe('/experiences');
+        });
+        
+        it('should change location path to /education when location is /experiences', function () {
+            location.path('/experiences');
+            scope.vo.openPrevious();
+            expect(location.path()).toBe('/education');
+        });
+        
+        it('should change location path to /personalDetails when location is /education', function () {
+            location.path('/education');
+            scope.vo.openPrevious();
+            expect(location.path()).toBe('/personalDetails');
         });
         
         it('should not change location path when location is /personalDetails', function () {
@@ -105,6 +185,36 @@ describe('Controller: NavigationCtrl', function () {
             location.path('/personalDetails');
             scope.vo.openNext();
             expect(location.path()).toBe('/education');
+        });
+        
+        it('should change location path to /experiences when location is /education', function () {
+            location.path('/education');
+            scope.vo.openNext();
+            expect(location.path()).toBe('/experiences');
+        });
+        
+        it('should change location path to /projects when location is /experiences', function () {
+            location.path('/experiences');
+            scope.vo.openNext();
+            expect(location.path()).toBe('/projects');
+        });
+        
+        it('should change location path to /skills when location is /projects', function () {
+            location.path('/projects');
+            scope.vo.openNext();
+            expect(location.path()).toBe('/skills');
+        });
+        
+        it('should change location path to /todo when location is /skills', function () {
+            location.path('/skills');
+            scope.vo.openNext();
+            expect(location.path()).toBe('/todo');
+        });
+        
+        it('should change location path to /allInOnePage when location is /todo', function () {
+            location.path('/todo');
+            scope.vo.openNext();
+            expect(location.path()).toBe('/allInOnePage');
         });
         
         it('should not change location path when location is /allInOnePage', function () {
