@@ -16,6 +16,7 @@ angular.module('konczakpiotrcvApp')
                 '/experiences',
                 '/projects',
                 '/skills',
+                '/todos',
                 '/allInOnePage'];
 
             function hasPrevious() {

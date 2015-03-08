@@ -75,10 +75,10 @@ describe('Controller: NavigationCtrl', function () {
             expect(typeof scope.vo.openPrevious).toBe('function');
         });
         
-        it('should change location path to /skills when location is /allInOnePage', function () {
+        it('should change location path to /todos when location is /allInOnePage', function () {
             location.path('/allInOnePage');
             scope.vo.openPrevious();
-            expect(location.path()).toBe('/skills');
+            expect(location.path()).toBe('/todos');
         });
         
         it('should not change location path when location is /personalDetails', function () {

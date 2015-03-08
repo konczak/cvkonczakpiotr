@@ -160,3 +160,7 @@ h5.skills-category {
 .progress-bar-danger .progress-type {
     color: black;
 }
+
+.state-icon {
+    left: -5px;
+}
