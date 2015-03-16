@@ -392,7 +392,15 @@ module.exports = function (grunt) {
 			branch: 'master'
 		  }
 		}
-	  }
+	  },
+        bumpup: {
+            options: {
+                updateProps: {
+                    pkg: 'package.json'
+                }
+            },
+            files: ['package.json', 'bower.json', 'app/data/metadata.json']
+        }
   });
 
 
@@ -427,6 +435,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bumpup:minor',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',

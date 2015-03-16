@@ -83,13 +83,13 @@
                             </li>
                         </ul>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
 
-        <div class="footer">
+        <div class="footer" ng-controller="FooterCtrl">
             <div class="container">
-                <p>Kończak Piotr <span class="glyphicon glyphicon-copyright-mark"></span> 2015</p>
+                <p>Kończak Piotr <span class="glyphicon glyphicon-copyright-mark"></span> 2015 {{vo.version ? '- ' + vo.version : ''}}</p>
                 <p>Thanks to my wife, Yeoman team, itsrifat, mouse0270</p>
             </div>
         </div>
@@ -145,6 +145,8 @@
         <script src="scripts/controllers/navigation.js"></script>
         <script src="scripts/controllers/todo.js"></script>
         <script src="scripts/services/todo.js"></script>
+        <script src="scripts/controllers/footer.js"></script>
+        <script src="scripts/services/metadata.js"></script>
         <!-- endbuild -->
     </body>
 </html>
