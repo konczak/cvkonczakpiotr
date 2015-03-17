@@ -8,17 +8,16 @@
  *
  * Main module of the application.
  */
-angular
-        .module('konczakpiotrcvApp', [
-            'ngAnimate',
-            'ngCookies',
-            'ngResource',
-            'ngRoute',
-            'ngSanitize',
-            'ngTouch',
-            'ui.bootstrap',
-            'ngAnimate-animate.css'
-        ])
+angular.module('konczakpiotrcvApp', [
+    'ngAnimate',
+    'ngCookies',
+    'ngResource',
+    'ngRoute',
+    'ngSanitize',
+    'ngTouch',
+    'LocalStorageModule',
+    'ui.bootstrap',
+    'ngAnimate-animate.css'])
         .config(function ($routeProvider) {
             $routeProvider
                     .when('/allInOnePage', {
@@ -114,6 +113,10 @@ angular
                     .otherwise({
                         redirectTo: '/personalDetails'
                     });
+        })
+        .config(function (localStorageServiceProvider) {
+            localStorageServiceProvider
+                    .setPrefix('konczakpiotrcv');
         })
         .factory('moment', function () {
             return({

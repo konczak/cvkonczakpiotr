@@ -18,8 +18,8 @@
         },
         {
             "title": "Store CV data in LocalStorage to increase loading speed",
-            "completed": false,
-            "completedAt": null
+            "completed": true,
+            "completedAt": "17/03/2015"
         },
         {
             "title": "Version application to simplify maintenance",
