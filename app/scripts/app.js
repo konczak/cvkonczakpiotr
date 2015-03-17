@@ -51,10 +51,6 @@ angular
                             }
                         }
                     })
-                    .when('/about', {
-                        templateUrl: 'views/about.html',
-                        controller: 'AboutCtrl'
-                    })
                     .when('/personalDetails', {
                         templateUrl: 'views/personaldetails.html',
                         controller: 'PersonaldetailsCtrl',
