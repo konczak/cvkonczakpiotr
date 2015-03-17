@@ -31,6 +31,7 @@ module.exports = function(config) {
       'bower_components/bootswatch-dist/js/bootstrap.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
       'bower_components/ngAnimate-animate.css/animate.js',
+      'bower_components/moment/moment.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

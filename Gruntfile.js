@@ -395,6 +395,7 @@ module.exports = function (grunt) {
 	  },
         bumpup: {
             options: {
+                dateformat: 'DD/MM/YYYY',
                 updateProps: {
                     pkg: 'package.json'
                 }

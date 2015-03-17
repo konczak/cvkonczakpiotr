@@ -115,6 +115,11 @@ angular
                         redirectTo: '/personalDetails'
                     });
         })
+        .factory('moment', function () {
+            return({
+                parse: moment
+            });
+        })
         .run(['$rootScope', function ($root) {
                 $root.$on('$routeChangeStart', function (event, next, current) {
                     // Show a loading message until promises are not resolved

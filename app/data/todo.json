@@ -72,7 +72,12 @@
             "completedAt": null
         },
         {
-            "title": "Add minification of JSON files to decrease their size in production and inrease loading speed",
+            "title": "Add minification of JSON files to reduce load size",
+            "completed": true,
+            "completedAt": "17/03/2015"
+        },
+        {
+            "title": "Put update date automatically before release to reduce chance of forgetting",
             "completed": true,
             "completedAt": "17/03/2015"
         }
