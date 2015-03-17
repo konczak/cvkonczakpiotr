@@ -450,7 +450,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'bumpup:minor',
+    'bumpup:patch',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
