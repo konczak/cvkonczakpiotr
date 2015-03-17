@@ -400,6 +400,21 @@ module.exports = function (grunt) {
                 }
             },
             files: ['package.json', 'bower.json', 'app/data/metadata.json']
+        },
+        minjson: {
+            compile: {
+                files: {
+                    '<%= yeoman.dist %>/data/courses.json' : '<%= yeoman.app %>/data/courses.json',
+                    '<%= yeoman.dist %>/data/jobs.json' : '<%= yeoman.app %>/data/jobs.json',
+                    '<%= yeoman.dist %>/data/metadata.json' : '<%= yeoman.app %>/data/metadata.json',
+                    '<%= yeoman.dist %>/data/personaldata.json' : '<%= yeoman.app %>/data/personaldata.json',
+                    '<%= yeoman.dist %>/data/projects.json' : '<%= yeoman.app %>/data/projects.json',
+                    '<%= yeoman.dist %>/data/skillsmain.json' : '<%= yeoman.app %>/data/skillsmain.json',
+                    '<%= yeoman.dist %>/data/skillsother.json' : '<%= yeoman.app %>/data/skillsother.json',
+                    '<%= yeoman.dist %>/data/sociallinks.json' : '<%= yeoman.app %>/data/sociallinks.json',
+                    '<%= yeoman.dist %>/data/todo.json' : '<%= yeoman.app %>/data/todo.json'
+                }
+            }
         }
   });
 
@@ -447,6 +462,7 @@ module.exports = function (grunt) {
     'cssmin',
     'uglify',
     'filerev',
+    'minjson',
     'usemin',
     'htmlmin'
   ]);
