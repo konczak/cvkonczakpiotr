@@ -1,17 +1,17 @@
 <div class="bs-callout bs-callout-danger">
-    <h4>Education</h4>
+    <h4>{{"EDUCATION_TITLE"| translate}}</h4>
     <table class="table table-striped table-responsive ">
         <thead>
             <tr>
-                <th>Place</th>
-                <th>Degree</th>
-                <th>Period</th>
+                <th>{{"EDUCATION_PLACE"| translate}}</th>
+                <th>{{"EDUCATION_DEGREE"| translate}}</th>
+                <th>{{"EDUCATION_PERIOD"| translate}}</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>Technical University of Lodz</td>
-                <td>Master of Science, Engineer</td>
+                <td>{{"EDUCATION_PLACE_VALUE"| translate}}</td>
+                <td>{{"EDUCATION_DEGREE_VALUE"| translate}}</td>
                 <td>2006.10.01 - 2011.06.30</td>
             </tr>
         </tbody>
@@ -19,27 +19,27 @@
 </div>
 
 <div class="bs-callout bs-callout-danger">
-    <h4>Courses</h4>
+    <h4>{{"COURSES_TITLE"| translate}}</h4>
     <table class="table table-striped table-responsive ">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Description</th>
+                <th>{{"COURSES_NAME"| translate}}</th>
+                <th>{{"COURSES_DESCRIPTION"| translate}}</th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="course in vo.courses">
-                <td>{{course.name_en}}</td>
+                <td>{{course.name()}}</td>
                 <td>
                     <p class="clickable"
-                       ng-show="course.description_en.length > 50"
+                       ng-show="course.description().length > 50"
                        ng-click="course.shortDescription = !course.shortDescription"
                        tooltip="Press to expand or collapse"
                        tooltip-popup-delay="200">
-                        {{course.description_en| showMoreWhenTooLong:!course.shortDescription:true:50}}
+                        {{course.description()| showMoreWhenTooLong:!course.shortDescription:true:50}}
                     </p>
-                    <p ng-show="course.description_en.length <= 50">
-                        {{course.description_en}}
+                    <p ng-show="course.description().length <= 50">
+                        {{course.description()}}
                     </p>
                 </td>
             </tr>

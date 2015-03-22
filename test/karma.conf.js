@@ -33,6 +33,9 @@ module.exports = function(config) {
       'bower_components/ngAnimate-animate.css/animate.js',
       'bower_components/moment/moment.js',
       'bower_components/angular-local-storage/dist/angular-local-storage.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js',
+      'bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

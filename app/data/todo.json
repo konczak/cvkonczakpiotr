@@ -63,8 +63,8 @@
         },
         {
             "title": "Add English-Polish language support to improve personal skills and UX",
-            "completed": false,
-            "completedAt": null
+            "completed": true,
+            "completedAt": "22/03/2015"
         },
         {
             "title": "Handle date formating for different regions to improve UX",

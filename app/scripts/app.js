@@ -16,6 +16,7 @@ angular.module('konczakpiotrcvApp', [
     'ngSanitize',
     'ngTouch',
     'LocalStorageModule',
+    'pascalprecht.translate',
     'ui.bootstrap',
     'ngAnimate-animate.css'])
         .config(function ($routeProvider) {
@@ -47,6 +48,15 @@ angular.module('konczakpiotrcvApp', [
                             },
                             todos: function (todo) {
                                 return todo.getTodos();
+                            },
+                            allInOnePagePartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('personalDetails');
+                                $translatePartialLoader.addPart('experiences');
+                                $translatePartialLoader.addPart('skills');
+                                $translatePartialLoader.addPart('education');
+                                $translatePartialLoader.addPart('projects');
+                                $translatePartialLoader.addPart('todo');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -59,6 +69,10 @@ angular.module('konczakpiotrcvApp', [
                             },
                             socialLinks: function (socialLinks) {
                                 return socialLinks.getSocialLinks();
+                            },
+                            personalDetailsPartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('personalDetails');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -68,6 +82,10 @@ angular.module('konczakpiotrcvApp', [
                         resolve: {
                             jobs: function (jobs) {
                                 return jobs.getJobs();
+                            },
+                            experiencesPartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('experiences');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -80,6 +98,10 @@ angular.module('konczakpiotrcvApp', [
                             },
                             categories: function (skills) {
                                 return skills.getOtherSkills();
+                            },
+                            skillsPartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('skills');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -89,6 +111,10 @@ angular.module('konczakpiotrcvApp', [
                         resolve: {
                             courses: function (courses) {
                                 return courses.getCourses();
+                            },
+                            educationPartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('education');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -98,6 +124,10 @@ angular.module('konczakpiotrcvApp', [
                         resolve: {
                             projects: function (projects) {
                                 return projects.getProjects();
+                            },
+                            projectsPartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('projects');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -107,6 +137,10 @@ angular.module('konczakpiotrcvApp', [
                         resolve: {
                             todos: function (todo) {
                                 return todo.getTodos();
+                            },
+                            todoPartialLoader: function ($translate, $translatePartialLoader) {
+                                $translatePartialLoader.addPart('todo');
+                                return $translate.refresh();
                             }
                         }
                     })
@@ -118,10 +152,13 @@ angular.module('konczakpiotrcvApp', [
             localStorageServiceProvider
                     .setPrefix('konczakpiotrcv');
         })
-        .factory('moment', function () {
-            return({
-                parse: moment
+        .config(function ($translateProvider) {
+            $translateProvider.useLoader('$translatePartialLoader', {
+                urlTemplate: 'i18n/{lang}/{part}.json'
             });
+
+            $translateProvider.preferredLanguage('en-gb');
+            $translateProvider.useStorage('customStorage');
         })
         .run(['$rootScope', function ($root) {
                 $root.$on('$routeChangeStart', function (event, next, current) {

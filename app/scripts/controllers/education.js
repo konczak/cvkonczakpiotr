@@ -8,9 +8,10 @@
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('EducationCtrl', function ($scope, courses) {
+        .controller('EducationCtrl', function ($scope, $translate, courses) {
             $scope.vo = {
-                courses: courses
+                courses: courses,
+                actualLanguage: $translate.use()
             };
 
         });

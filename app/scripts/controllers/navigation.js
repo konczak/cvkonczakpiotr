@@ -8,7 +8,7 @@
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('NavigationCtrl', function ($scope, $location) {
+        .controller('NavigationCtrl', function ($scope, $location, $translatePartialLoader, $translate) {
             $scope.vo = {};
 
             var list = ['/personalDetails',
@@ -21,8 +21,8 @@ angular.module('konczakpiotrcvApp')
 
             function hasPrevious() {
                 var indexInList = list.indexOf($location.path());
-                if (indexInList <= 0
-                        || indexInList >= list.length) {
+                if (indexInList <= 0 ||
+                        indexInList >= list.length) {
                     return false;
                 }
                 return true;
@@ -30,8 +30,8 @@ angular.module('konczakpiotrcvApp')
 
             function hasNext() {
                 var indexInList = list.indexOf($location.path());
-                if (indexInList < 0
-                        || indexInList >= (list.length - 1)) {
+                if (indexInList < 0 ||
+                        indexInList >= (list.length - 1)) {
                     return false;
                 }
                 return true;
@@ -39,8 +39,8 @@ angular.module('konczakpiotrcvApp')
 
             function openPrevious() {
                 var indexInList = list.indexOf($location.path());
-                if (indexInList < 0
-                        || indexInList >= list.length) {
+                if (indexInList < 0 ||
+                        indexInList >= list.length) {
                     return;
                 }
                 if (indexInList === 0) {
@@ -54,8 +54,8 @@ angular.module('konczakpiotrcvApp')
 
             function openNext() {
                 var indexInList = list.indexOf($location.path());
-                if (indexInList < 0
-                        || indexInList >= list.length) {
+                if (indexInList < 0 ||
+                        indexInList >= list.length) {
                     return;
                 }
                 if (indexInList === (list.length - 1)) {
@@ -72,4 +72,7 @@ angular.module('konczakpiotrcvApp')
             $scope.vo.openNext = openNext;
             $scope.vo.hasPrevious = hasPrevious;
             $scope.vo.hasNext = hasNext;
+
+            $translatePartialLoader.addPart('navigation');
+            $translate.refresh();
         });

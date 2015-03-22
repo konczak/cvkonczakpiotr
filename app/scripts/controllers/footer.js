@@ -8,7 +8,7 @@
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('FooterCtrl', function ($scope, metadata) {
+        .controller('FooterCtrl', function ($scope, $translatePartialLoader, $translate, metadata) {
             $scope.vo = {
                 version: null
             };
@@ -17,4 +17,7 @@ angular.module('konczakpiotrcvApp')
                     .then(function (data) {
                         $scope.vo.version = data.version;
                     });
+
+            $translatePartialLoader.addPart('footer');
+            $translate.refresh();
         });

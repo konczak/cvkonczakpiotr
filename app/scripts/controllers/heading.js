@@ -8,14 +8,28 @@
  * Controller of the konczakpiotrcvApp
  */
 angular.module('konczakpiotrcvApp')
-        .controller('HeadingCtrl', function ($scope, moment, metadata) {
+        .controller('HeadingCtrl', function ($rootScope, $scope, $translatePartialLoader, $translate, momentService, metadata) {
+            var updatedAt = null;
+
             $scope.vo = {
                 updatedAt: null
             };
 
+            function parseUpdatedAtI18N() {
+                $scope.vo.updatedAt = momentService(updatedAt, 'DD/MM/YYYY')
+                        .format('dddd, Do MMMM YYYY');
+            }
+
+            $rootScope.$on('$translateChangeEnd', function () {
+                parseUpdatedAtI18N();
+            });
+
             metadata.getMetadata()
                     .then(function (data) {
-                        $scope.vo.updatedAt = moment.parse(data.date, 'DD/MM/YYYY')
-                                .format('dddd, Do MMMM YYYY');
+                        updatedAt = data.date;
+                        parseUpdatedAtI18N();
                     });
+
+            $translatePartialLoader.addPart('heading');
+            $translate.refresh();
         });

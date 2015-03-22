@@ -15,18 +15,19 @@
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/flag.css">
         <link rel="stylesheet" href="styles/main.css">
         <link rel="stylesheet" href="styles/resume.css">
         <link rel="stylesheet" href="styles/animations.css">
         <!-- endbuild -->
     </head>
-    <body ng-app="konczakpiotrcvApp">
+    <body ng-app="konczakpiotrcvApp" ng-cloak="">
         <!--[if lt IE 7]>
           <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="header">
+        <div class="header" ng-controller="MenuCtrl">
             <div class="navbar navbar-default" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
@@ -38,30 +39,35 @@
                             <span class="icon-bar"></span>
                         </button>
 
-                        <a class="navbar-brand" href="#/">Kończak Piotr CV</a>
+                        <a class="navbar-brand" href="#/">{{"APPLICATION_NAME" | translate}}</a>
                     </div>
 
                     <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-                        <ul class="nav navbar-nav" ng-controller="MenuCtrl">
-                            <li ng-class="{'active' : isActive('/personalDetails')}"><a href="#/personalDetails">Personal details</a></li>
-                            <li ng-class="{'active' : isActive('/education')}"><a href="#/education">Education</a></li>
-                            <li ng-class="{'active' : isActive('/experiences')}"><a href="#/experiences">Experience</a></li>
-                            <li ng-class="{'active' : isActive('/projects')}"><a href="#/projects">Projects</a></li>
-                            <li ng-class="{'active' : isActive('/skills')}"><a href="#/skills">Skills</a></li>
-                            <li ng-class="{'active' : isActive('/todo')}"><a href="#/todo">Todos</a></li>
-                            <li ng-class="{'active' : isActive('/allInOnePage')}"><a href="#/allInOnePage">All in one page</a></li>
+                        <ul class="nav navbar-nav">
+                            <li ng-class="{'active' : isActive('/personalDetails')}"><a href="#/personalDetails">{{"MENU_PERSONAL_DETAILS" | translate}}</a></li>
+                            <li ng-class="{'active' : isActive('/education')}"><a href="#/education">{{"MENU_EDUCATION" | translate}}</a></li>
+                            <li ng-class="{'active' : isActive('/experiences')}"><a href="#/experiences">{{"MENU_EXPERIENCES" | translate}}</a></li>
+                            <li ng-class="{'active' : isActive('/projects')}"><a href="#/projects">{{"MENU_PROJECTS" | translate}}</a></li>
+                            <li ng-class="{'active' : isActive('/skills')}"><a href="#/skills">{{"MENU_SKILLS" | translate}}</a></li>
+                            <li ng-class="{'active' : isActive('/todo')}"><a href="#/todo">{{"MENU_TODO" | translate}}</a></li>
+                            <li ng-class="{'active' : isActive('/allInOnePage')}"><a href="#/allInOnePage">{{"MENU_ALL_IN_ONE_PAGE" | translate}}</a></li>
+                        </ul>
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <li ng-class="{'active' : isActualLanguage('en-gb')}"><a href="" ng-click="changeLanguageTo('en-gb')"><i class="gb flag"></i>{{"LANGUAGE_ENGLISH" | translate}}</a></li>
+                            <li ng-class="{'active' : isActualLanguage('pl')}"><a href="" ng-click="changeLanguageTo('pl')"><i class="pl flag"></i>{{"LANGUAGE_POLISH" | translate}}</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="container" ng-cloak="">
+        <div class="container">
             <div class="resume">
                 <header class="page-header" ng-controller="HeadingCtrl">
-                    <h1 class="page-title">Resume of Piotr Kończak</h1>
-                    <small ng-show="vo.updatedAt"> <i class="fa fa-clock-o"></i> Last Updated on: <time>{{vo.updatedAt}}</time></small>
+                    <h1 class="page-title">{{"MAIN_TITLE" | translate}}</h1>
+                    <small ng-show="vo.updatedAt"> <i class="fa fa-clock-o"></i> {{"LAST_UPDATE" | translate}}: <time>{{vo.updatedAt}}</time></small>
                 </header>
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
@@ -76,10 +82,10 @@
                         </div>
                         <ul class="pager" ng-controller="NavigationCtrl">
                             <li class="previous" ng-class="{'disabled' : !vo.hasPrevious()}">
-                                <a ng-click="vo.openPrevious()">← Previous</a>
+                                <a ng-click="vo.openPrevious()">← {{"BUTTON_PREVIOUS" | translate}}</a>
                             </li>
                             <li class="next" ng-class="{'disabled' : !vo.hasNext()}">
-                                <a ng-click="vo.openNext()">Next →</a>
+                                <a ng-click="vo.openNext()">{{"BUTTON_NEXT" | translate}} →</a>
                             </li>
                         </ul>
                     </div>
@@ -90,7 +96,7 @@
         <div class="footer" ng-controller="FooterCtrl">
             <div class="container">
                 <p>Kończak Piotr <span class="glyphicon glyphicon-copyright-mark"></span> 2015 {{vo.version ? '- ' + vo.version : ''}}</p>
-                <p>Thanks to my wife, Yeoman team, itsrifat, mouse0270</p>
+                <p>{{"THANKS" | translate}}</p>
             </div>
         </div>
 
@@ -124,13 +130,15 @@
         <script src="bower_components/ngAnimate-animate.css/animate.js"></script>
         <script src="bower_components/moment/moment.js"></script>
         <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="bower_components/angular-translate/angular-translate.js"></script>
+        <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
+        <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
         <script src="scripts/controllers/personaldetails.js"></script>
         <script src="scripts/controllers/experiences.js"></script>
         <script src="scripts/controllers/skills.js"></script>
@@ -150,6 +158,8 @@
         <script src="scripts/controllers/footer.js"></script>
         <script src="scripts/services/metadata.js"></script>
         <script src="scripts/controllers/heading.js"></script>
+        <script src="scripts/services/customstorage.js"></script>
+        <script src="scripts/services/moment.js"></script>
         <!-- endbuild -->
     </body>
 </html>

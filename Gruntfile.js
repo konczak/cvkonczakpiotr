@@ -329,7 +329,8 @@ module.exports = function (grunt) {
             'views/{,*/}*.html',
             'images/{,*/}*.{webp}',
             'styles/fonts/{,*/}*.*',
-            'data/*.json'
+            'data/*.json',
+            'i18n/*/*.json'
           ]
         }, {
           expand: true,
@@ -344,8 +345,8 @@ module.exports = function (grunt) {
         }, {
             expand: true,
             cwd: 'bower_components/fontawesome',
-            dest: '<%= yeoman.dist %>',
-            src: 'fonts/*'
+            src: 'fonts/*',
+            dest: '<%= yeoman.dist %>'
         }]
       },
       styles: {
@@ -413,7 +414,27 @@ module.exports = function (grunt) {
                     '<%= yeoman.dist %>/data/skillsmain.json' : '<%= yeoman.app %>/data/skillsmain.json',
                     '<%= yeoman.dist %>/data/skillsother.json' : '<%= yeoman.app %>/data/skillsother.json',
                     '<%= yeoman.dist %>/data/sociallinks.json' : '<%= yeoman.app %>/data/sociallinks.json',
-                    '<%= yeoman.dist %>/data/todo.json' : '<%= yeoman.app %>/data/todo.json'
+                    '<%= yeoman.dist %>/data/todo.json' : '<%= yeoman.app %>/data/todo.json',
+                    '<%= yeoman.dist %>/i18n/pl/education.json': '<%= yeoman.app %>/i18n/pl/education.json',
+                    '<%= yeoman.dist %>/i18n/pl/experiences.json': '<%= yeoman.app %>/i18n/pl/experiences.json',
+                    '<%= yeoman.dist %>/i18n/pl/footer.json': '<%= yeoman.app %>/i18n/pl/footer.json',
+                    '<%= yeoman.dist %>/i18n/pl/heading.json': '<%= yeoman.app %>/i18n/pl/heading.json',
+                    '<%= yeoman.dist %>/i18n/pl/menu.json': '<%= yeoman.app %>/i18n/pl/menu.json',
+                    '<%= yeoman.dist %>/i18n/pl/navigation.json': '<%= yeoman.app %>/i18n/pl/navigation.json',
+                    '<%= yeoman.dist %>/i18n/pl/personalDetails.json': '<%= yeoman.app %>/i18n/pl/personalDetails.json',
+                    '<%= yeoman.dist %>/i18n/pl/projects.json': '<%= yeoman.app %>/i18n/pl/projects.json',
+                    '<%= yeoman.dist %>/i18n/pl/skills.json': '<%= yeoman.app %>/i18n/pl/skills.json',
+                    '<%= yeoman.dist %>/i18n/pl/todo.json': '<%= yeoman.app %>/i18n/pl/todo.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/education.json' : '<%= yeoman.app %>/i18n/en-gb/education.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/experiences.json' : '<%= yeoman.app %>/i18n/en-gb/experiences.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/footer.json' : '<%= yeoman.app %>/i18n/en-gb/footer.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/heading.json' : '<%= yeoman.app %>/i18n/en-gb/heading.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/menu.json' : '<%= yeoman.app %>/i18n/en-gb/menu.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/navigation.json' : '<%= yeoman.app %>/i18n/en-gb/navigation.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/personalDetails.json' : '<%= yeoman.app %>/i18n/en-gb/personalDetails.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/projects.json' : '<%= yeoman.app %>/i18n/en-gb/projects.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/skills.json' : '<%= yeoman.app %>/i18n/en-gb/skills.json',
+                    '<%= yeoman.dist %>/i18n/en-gb/todo.json' : '<%= yeoman.app %>/i18n/en-gb/todo.json'
                 }
             }
         }
@@ -467,7 +488,7 @@ module.exports = function (grunt) {
     'usemin',
     'htmlmin'
   ]);
-
+  
   grunt.registerTask('default', [
     'newer:jshint',
     'test',

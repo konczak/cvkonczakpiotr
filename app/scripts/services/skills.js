@@ -23,7 +23,7 @@ angular.module('konczakpiotrcvApp')
             }
 
             function addTypesToSkills(skills) {
-                angular.forEach(skills, function (value, key) {
+                angular.forEach(skills, function (value) {
                     value.type = findProperType(value.percent);
                 });
             }
@@ -72,7 +72,7 @@ angular.module('konczakpiotrcvApp')
                                 $http.get('data/skillsother.json')
                                         .success(function (data) {
                                             var categories = data.categories;
-                                            angular.forEach(categories, function (value, key) {
+                                            angular.forEach(categories, function (value) {
                                                 addTypesToSkills(value.skills);
                                             });
                                             localStorageService.set('skillsother', JSON.stringify(categories));
@@ -83,7 +83,7 @@ angular.module('konczakpiotrcvApp')
                             $http.get('data/skillsother.json')
                                     .success(function (data) {
                                         var categories = data.categories;
-                                        angular.forEach(categories, function (value, key) {
+                                        angular.forEach(categories, function (value) {
                                             addTypesToSkills(value.skills);
                                         });
                                         deferred.resolve(categories);
